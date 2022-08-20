@@ -31,4 +31,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'tinyurl' => [
+        'endpoint' => env('TINYURL_BASE_URL', 'https://tinyurl.com/api-create.php?url=')
+    ]
+
 ];

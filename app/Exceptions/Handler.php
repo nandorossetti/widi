@@ -46,5 +46,12 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+
+        $this->renderable(function (TinyUrlApiException $e, $request) {
+            return response()->json([
+                'error' => 'TinyURL API failed.',
+                'message' => $e->getMessage()
+            ], 500);
+        });
     }
 }
